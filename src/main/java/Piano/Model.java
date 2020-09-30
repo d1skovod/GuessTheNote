@@ -4,21 +4,24 @@ import javafx.event.EventHandler;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.AudioClip;
 
+import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.io.File;
 import java.net.URI;
+import java.net.URL;
 import java.nio.file.Paths;
 
 public class Model {
     private String[] notes = {"CC", "C#", "DD", "D#", "EE", "FF", "F#", "GG", "G#", "AA", "A#", "BB"};
-    private static String cNote;
-    private static String octave = "2";
+    private String cNote;
+    private String octave;
 
-    public static void playNote(String note) {
-        File f = new File("E:/idea/GuessTheNote/src/main/resources/" + note + ".wav");
-        URI u = f.toURI();
-        AudioClip pNote = new AudioClip(u.toString());
-        pNote.play();
+    public void playNote(String note) {
+        if (octave != null) {
+            URL url = Model.class.getResource("/" + note + ".wav");
+            AudioClip pNote = new AudioClip(url.toString());
+            pNote.play();
+        }
     }
 
     public void setNewNote() {
@@ -38,11 +41,7 @@ public class Model {
     }
     */
 
-    public String getNote() {
-        return cNote;
-    }
+    public String getNote() { return cNote; }
 
-    public static String getOctave() {
-        return octave;
-    }
+    public String getOctave() { return octave; }
 }

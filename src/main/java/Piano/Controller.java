@@ -1,5 +1,6 @@
 package Piano;
 
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
@@ -49,18 +50,22 @@ public class Controller {
 
     @FXML
     void initialize() {
-        c.setOnMousePressed(mouseEvent -> Model.playNote("cc" + Model.getOctave()));
-        d.setOnMousePressed(mouseEvent -> Model.playNote("DD" + Model.getOctave()));
-        e.setOnMousePressed(mouseEvent -> Model.playNote("EE" + Model.getOctave()));
-        f.setOnMousePressed(mouseEvent -> Model.playNote("FF" + Model.getOctave()));
-        g.setOnMousePressed(mouseEvent -> Model.playNote("GG" + Model.getOctave()));
-        a.setOnMousePressed(mouseEvent -> Model.playNote("AA" + Model.getOctave()));
-        b.setOnMousePressed(mouseEvent -> Model.playNote("BB" + Model.getOctave()));
-        cs.setOnMousePressed(mouseEvent -> Model.playNote("c#" + Model.getOctave()));
-        ds.setOnMousePressed(mouseEvent -> Model.playNote("D#" + Model.getOctave()));
-        fs.setOnMousePressed(mouseEvent -> Model.playNote("F#" + Model.getOctave()));
-        gs.setOnMousePressed(mouseEvent -> Model.playNote("G#" + Model.getOctave()));
-        as.setOnMousePressed(mouseEvent -> Model.playNote("A#" + Model.getOctave()));
-    }
+        Model app = new Model();
 
+        c.setOnMousePressed(mouseEvent -> app.playNote("cc" + app.getOctave()));
+        d.setOnMousePressed(mouseEvent -> app.playNote("DD" + app.getOctave()));
+        e.setOnMousePressed(mouseEvent -> app.playNote("EE" + app.getOctave()));
+        f.setOnMousePressed(mouseEvent -> app.playNote("FF" + app.getOctave()));
+        g.setOnMousePressed(mouseEvent -> app.playNote("GG" + app.getOctave()));
+        a.setOnMousePressed(mouseEvent -> app.playNote("AA" + app.getOctave()));
+        b.setOnMousePressed(mouseEvent -> app.playNote("BB" + app.getOctave()));
+        cs.setOnMousePressed(mouseEvent -> app.playNote("c#" + app.getOctave()));
+        ds.setOnMousePressed(mouseEvent -> app.playNote("D#" + app.getOctave()));
+        fs.setOnMousePressed(mouseEvent -> app.playNote("F#" + app.getOctave()));
+        gs.setOnMousePressed(mouseEvent -> app.playNote("G#" + app.getOctave()));
+        as.setOnMousePressed(mouseEvent -> app.playNote("A#" + app.getOctave()));
+
+        start.setOnMousePressed(mouseEvent -> app.setNewNote());
+        playNote.setOnMousePressed(mouseEvent -> app.playNote(app.getNote() + app.getOctave()));
+    }
 }
