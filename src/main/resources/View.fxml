@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="586.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Piano.Controller">
+   <children>
+      <Button fx:id="c" layoutX="14.0" layoutY="131.0" mnemonicParsing="false" prefHeight="255.0" prefWidth="80.0" text="C" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="d" layoutX="94.0" layoutY="131.0" mnemonicParsing="false" prefHeight="255.0" prefWidth="80.0" text="D" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="e" layoutX="174.0" layoutY="131.0" mnemonicParsing="false" prefHeight="255.0" prefWidth="80.0" text="E" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="f" layoutX="254.0" layoutY="131.0" mnemonicParsing="false" prefHeight="255.0" prefWidth="80.0" text="F" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="g" layoutX="334.0" layoutY="131.0" mnemonicParsing="false" prefHeight="255.0" prefWidth="80.0" text="G" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="a" layoutX="414.0" layoutY="131.0" mnemonicParsing="false" prefHeight="255.0" prefWidth="80.0" text="A" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="b" layoutX="494.0" layoutY="131.0" mnemonicParsing="false" prefHeight="255.0" prefWidth="80.0" text="B" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="cs" layoutX="75.0" layoutY="131.0" mnemonicParsing="false" prefHeight="182.0" prefWidth="38.0" text="C#">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="start" layoutX="254.0" layoutY="38.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="START">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="playNote" layoutX="254.0" layoutY="83.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" text="PLAY NOTE">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="ds" layoutX="155.0" layoutY="131.0" mnemonicParsing="false" prefHeight="182.0" prefWidth="38.0" text="D#">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="fs" layoutX="314.0" layoutY="131.0" mnemonicParsing="false" prefHeight="182.0" prefWidth="38.0" text="F#">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="gs" layoutX="395.0" layoutY="131.0" mnemonicParsing="false" prefHeight="182.0" prefWidth="38.0" text="G#">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="as" layoutX="474.0" layoutY="131.0" mnemonicParsing="false" prefHeight="182.0" prefWidth="38.0" text="A#">
+         <font>
+            <Font name="Arial Bold" size="12.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</AnchorPane>
