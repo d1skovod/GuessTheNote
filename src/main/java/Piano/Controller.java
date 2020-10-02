@@ -3,6 +3,12 @@ package Piano;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Shape;
+import javafx.scene.text.Text;
+
+import java.io.IOException;
 
 public class Controller {
 
@@ -49,23 +55,147 @@ public class Controller {
     private Button playNote;
 
     @FXML
-    void initialize() {
-        Model app = new Model();
+    private Text score;
 
-        c.setOnMousePressed(mouseEvent -> app.playNote("cc" + app.getOctave()));
-        d.setOnMousePressed(mouseEvent -> app.playNote("DD" + app.getOctave()));
-        e.setOnMousePressed(mouseEvent -> app.playNote("EE" + app.getOctave()));
-        f.setOnMousePressed(mouseEvent -> app.playNote("FF" + app.getOctave()));
-        g.setOnMousePressed(mouseEvent -> app.playNote("GG" + app.getOctave()));
-        a.setOnMousePressed(mouseEvent -> app.playNote("AA" + app.getOctave()));
-        b.setOnMousePressed(mouseEvent -> app.playNote("BB" + app.getOctave()));
-        cs.setOnMousePressed(mouseEvent -> app.playNote("c#" + app.getOctave()));
-        ds.setOnMousePressed(mouseEvent -> app.playNote("D#" + app.getOctave()));
-        fs.setOnMousePressed(mouseEvent -> app.playNote("F#" + app.getOctave()));
-        gs.setOnMousePressed(mouseEvent -> app.playNote("G#" + app.getOctave()));
-        as.setOnMousePressed(mouseEvent -> app.playNote("A#" + app.getOctave()));
+    @FXML
+    private Shape rect;
 
-        start.setOnMousePressed(mouseEvent -> app.setNewNote());
-        playNote.setOnMousePressed(mouseEvent -> app.playNote(app.getNote() + app.getOctave()));
+
+    private int count = 0;
+
+    @FXML
+    void initialize() throws IOException {
+        String img = getClass().getResource("/app.png").toExternalForm();
+        rect.setFill(new ImagePattern(new Image(img)));
+        Note note = new Note();
+        updateScore();
+
+        c.setOnMousePressed(mouseEvent -> {
+            note.playNote("cc" + note.getOctave());
+            if (note.checkNote("cc")) {
+                count++;
+            }
+            else {
+                count = 0;
+            }
+            updateScore();
+        });
+        d.setOnMousePressed(mouseEvent -> {
+            note.playNote("DD" + note.getOctave());
+            if (note.checkNote("DD")) {
+                count++;
+            }
+            else {
+                count = 0;
+            }
+            updateScore();
+        });
+        e.setOnMousePressed(mouseEvent -> {
+            note.playNote("EE" + note.getOctave());
+            if (note.checkNote("EE")) {
+                count++;
+            }
+            else {
+                count = 0;
+            }
+            updateScore();
+        });
+        f.setOnMousePressed(mouseEvent -> {
+            note.playNote("FF" + note.getOctave());
+            if (note.checkNote("FF")) {
+                count++;
+            }
+            else {
+                count = 0;
+            }
+            updateScore();
+        });
+        g.setOnMousePressed(mouseEvent -> {
+            note.playNote("GG" + note.getOctave());
+            if (note.checkNote("GG")) {
+                count++;
+            }
+            else {
+                count = 0;
+            }
+            updateScore();
+        });
+        a.setOnMousePressed(mouseEvent -> {
+            note.playNote("AA" + note.getOctave());
+            if (note.checkNote("AA")) {
+                count++;
+            }
+            else {
+                count = 0;
+            }
+            updateScore();
+        });
+        b.setOnMousePressed(mouseEvent -> {
+            note.playNote("BB" + note.getOctave());
+            if (note.checkNote("BB")) {
+                count++;
+            }
+            else {
+                count = 0;
+            }
+            updateScore();
+        });
+        cs.setOnMousePressed(mouseEvent -> {
+            note.playNote("c#" + note.getOctave());
+            if (note.checkNote("c#")) {
+                count++;
+            }
+            else {
+                count = 0;
+            }
+            updateScore();
+        });
+        ds.setOnMousePressed(mouseEvent -> {
+            note.playNote("D#" + note.getOctave());
+            if (note.checkNote("D#")) {
+                count++;
+            }
+            else {
+                count = 0;
+            }
+            updateScore();
+        });
+        fs.setOnMousePressed(mouseEvent -> {
+            note.playNote("F#" + note.getOctave());
+            if (note.checkNote("F#")) {
+                count++;
+            }
+            else {
+                count = 0;
+            }
+            updateScore();
+        });
+        gs.setOnMousePressed(mouseEvent -> {
+            note.playNote("G#" + note.getOctave());
+            if (note.checkNote("G#")) {
+                count++;
+            }
+            else {
+                count = 0;
+            }
+            updateScore();
+        });
+        as.setOnMousePressed(mouseEvent -> {
+            note.playNote("A#" + note.getOctave());
+            if (note.checkNote("A#")) {
+                count++;
+            }
+            else {
+                count = 0;
+            }
+            updateScore();
+        });
+
+        start.setOnMousePressed(mouseEvent -> note.setNewNote());
+        playNote.setOnMousePressed(mouseEvent -> note.playNote(note.getNote() + note.getOctave()));
+    }
+
+    private void updateScore (){
+        score.setText(String.valueOf(count));
     }
 }
