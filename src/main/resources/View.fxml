@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="586.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Piano.Controller">
+<AnchorPane prefHeight="400.0" prefWidth="586.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Piano.Controller">
    <children>
       <Rectangle fx:id="rect" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="400.0" stroke="BLACK" strokeType="INSIDE" width="586.0" />
       <Button fx:id="c" layoutX="14.0" layoutY="131.0" mnemonicParsing="false" prefHeight="255.0" prefWidth="80.0" text="C" textAlignment="CENTER">
@@ -170,6 +170,11 @@
       <Text fill="WHITE" layoutX="485.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A#">
          <font>
             <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="status" fill="#d69b84" layoutX="253.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="312.79999389648424">
+         <font>
+            <Font name="Century Gothic Bold" size="14.0" />
          </font>
       </Text>
    </children>

@@ -58,6 +58,9 @@ public class Controller {
     private Text score;
 
     @FXML
+    private Text status;
+
+    @FXML
     private Shape rect;
 
 
@@ -65,18 +68,25 @@ public class Controller {
 
     @FXML
     void initialize() throws IOException {
-        String img = getClass().getResource("/app.png").toExternalForm();
-        rect.setFill(new ImagePattern(new Image(img)));
-        Note note = new Note();
+        String startStatus = "Press START to play";
+        String rightStatus = "You're right! Next note...";
+        String wrongStatus = "You're wrong. Press START to try again";
+        String waitStatus = "GuessTheNote!";
+        rect.setFill(new ImagePattern(new Image(getClass().getResource("/app.png").toExternalForm())));
+        status.setText("Press START to play");
         updateScore();
+
+        Note note = new Note();
 
         c.setOnMousePressed(mouseEvent -> {
             note.playNote("cc" + note.getOctave());
             if (note.checkNote("cc")) {
                 count++;
+                status.setText(rightStatus);
             }
             else {
                 count = 0;
+                status.setText(wrongStatus);
             }
             updateScore();
         });
@@ -84,9 +94,11 @@ public class Controller {
             note.playNote("DD" + note.getOctave());
             if (note.checkNote("DD")) {
                 count++;
+                status.setText(rightStatus);
             }
             else {
                 count = 0;
+                status.setText(wrongStatus);
             }
             updateScore();
         });
@@ -94,9 +106,11 @@ public class Controller {
             note.playNote("EE" + note.getOctave());
             if (note.checkNote("EE")) {
                 count++;
+                status.setText(rightStatus);
             }
             else {
                 count = 0;
+                status.setText(wrongStatus);
             }
             updateScore();
         });
@@ -104,9 +118,11 @@ public class Controller {
             note.playNote("FF" + note.getOctave());
             if (note.checkNote("FF")) {
                 count++;
+                status.setText(rightStatus);
             }
             else {
                 count = 0;
+                status.setText(wrongStatus);
             }
             updateScore();
         });
@@ -114,9 +130,11 @@ public class Controller {
             note.playNote("GG" + note.getOctave());
             if (note.checkNote("GG")) {
                 count++;
+                status.setText(rightStatus);
             }
             else {
                 count = 0;
+                status.setText(wrongStatus);
             }
             updateScore();
         });
@@ -124,9 +142,11 @@ public class Controller {
             note.playNote("AA" + note.getOctave());
             if (note.checkNote("AA")) {
                 count++;
+                status.setText(rightStatus);
             }
             else {
                 count = 0;
+                status.setText(wrongStatus);
             }
             updateScore();
         });
@@ -134,9 +154,11 @@ public class Controller {
             note.playNote("BB" + note.getOctave());
             if (note.checkNote("BB")) {
                 count++;
+                status.setText(rightStatus);
             }
             else {
                 count = 0;
+                status.setText(wrongStatus);
             }
             updateScore();
         });
@@ -144,9 +166,11 @@ public class Controller {
             note.playNote("c#" + note.getOctave());
             if (note.checkNote("c#")) {
                 count++;
+                status.setText(rightStatus);
             }
             else {
                 count = 0;
+                status.setText(wrongStatus);
             }
             updateScore();
         });
@@ -154,9 +178,11 @@ public class Controller {
             note.playNote("D#" + note.getOctave());
             if (note.checkNote("D#")) {
                 count++;
+                status.setText(rightStatus);
             }
             else {
                 count = 0;
+                status.setText(wrongStatus);
             }
             updateScore();
         });
@@ -164,9 +190,11 @@ public class Controller {
             note.playNote("F#" + note.getOctave());
             if (note.checkNote("F#")) {
                 count++;
+                status.setText(rightStatus);
             }
             else {
                 count = 0;
+                status.setText(wrongStatus);
             }
             updateScore();
         });
@@ -174,9 +202,11 @@ public class Controller {
             note.playNote("G#" + note.getOctave());
             if (note.checkNote("G#")) {
                 count++;
+                status.setText(rightStatus);
             }
             else {
                 count = 0;
+                status.setText(wrongStatus);
             }
             updateScore();
         });
@@ -184,14 +214,19 @@ public class Controller {
             note.playNote("A#" + note.getOctave());
             if (note.checkNote("A#")) {
                 count++;
+                status.setText(rightStatus);
             }
             else {
                 count = 0;
+                status.setText(wrongStatus);
             }
             updateScore();
         });
 
-        start.setOnMousePressed(mouseEvent -> note.setNewNote());
+        start.setOnMousePressed(mouseEvent -> {
+            note.setNewNote();
+            status.setText(waitStatus);
+        });
         playNote.setOnMousePressed(mouseEvent -> note.playNote(note.getNote() + note.getOctave()));
     }
 
